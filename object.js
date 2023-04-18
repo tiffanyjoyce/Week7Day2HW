@@ -112,3 +112,48 @@ Ten('Amazing')
 
 // python to javascript
 
+//convert from CamelCase to snake_case
+
+// def snake_case(str):
+//      stringList= list(str)
+//      new_string= ''
+//      for i in range(len(stringList)):
+//          if i == 0:
+//              new_string+=stringList[i].lower()
+//          elif stringList[i] == stringList[i].upper():
+//              new_string+= stringList[i].lower()
+//          else:
+//              new_string += stringList[i]
+
+
+function snake_case(str){
+new_string = ''
+for(i=0; i<str.length; i++){
+    if(i === 0){
+        new_string+= str[i].toLowerCase()
+    }else if (str[i] == str[i].toUpperCase()){
+        new_string+= '_'+str[i].toLowerCase()
+    } else {
+        new_string+= str[i]
+    }
+}
+return new_string
+}
+console.log(snake_case('HiHowAreYou'));
+
+/*You forgot to count the number of toast you put into there, 
+you don't know if you put exactly six pieces of toast into the toasters.
+
+Define a function that counts how many more (or less) pieces of toast 
+you need in the toasters. Even though you need more or less, 
+the number will still be positive, not negative. */
+
+function six_toast(num){
+    if(6-num>=0){
+        return 6-num
+    }else {
+        return Math.abs(6-num)
+    }
+}
+console.log(six_toast(8))
+
